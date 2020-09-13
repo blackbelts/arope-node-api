@@ -29,14 +29,16 @@ app.use(cors());
 //   resave: false
 // }))
 
-
+app.get("/",function(req,res){
+  return res.send("welcome");
+})
 app.get('/login//:port/:database/:username/:password/', function (req, res) {
   var name = req.params.username
   var pass = req.params.password
   var database = req.params.database
   var port = req.params.port
   var odoo = new Odoo({
-    url: "http://3.249.109.211",
+    url: "http://207.154.195.214/",
     port: port,
     db: database,
     username: name,
@@ -59,11 +61,11 @@ app.get('/login//:port/:database/:username/:password/', function (req, res) {
 app.get('/get_session/:amount/:payment', function (req, res) {
   var amount = req.params.amount
   var odoo = new Odoo({
-    url: "http://3.249.109.211",
+    url: "http://207.154.195.214/",
     port: 8069,
-    db: 'odoo',
-    username: 'online',
-    password: 'online'
+    db: 'arope-space01',
+    username: 'admin',
+    password: 'admin'
   });
   odoo.connect(function (err, val) {
     if (err) {
@@ -223,11 +225,11 @@ app.post('/call_method/:modelname/:method', function (req, res) {
   var method = req.params.method
   var params = req.body.paramlist
   var odoo = new Odoo({
-    url: "http://3.249.109.211",
+    url: "http://207.154.195.214/",
     port: 8069,
-    db: 'odoo',
-    username: 'online',
-    password: 'online'
+    db: 'arope-space01',
+    username: 'admin',
+    password: 'admin'
   });
 
   var new_params = JSON.parse(params);
