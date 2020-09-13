@@ -62,7 +62,7 @@ app.get('/get_session/:amount/:payment', function (req, res) {
   var amount = req.params.amount
   var odoo = new Odoo({
     url: "http://207.154.195.214/",
-    port: 8069,
+    port: 7070,
     db: 'arope-space01',
     username: 'admin',
     password: 'admin'
@@ -226,7 +226,7 @@ app.post('/call_method/:modelname/:method', function (req, res) {
   var params = req.body.paramlist
   var odoo = new Odoo({
     url: "http://207.154.195.214/",
-    port: 8069,
+    port: 7070,
     db: 'arope-space01',
     username: 'admin',
     password: 'admin'
