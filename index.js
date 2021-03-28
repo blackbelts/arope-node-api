@@ -21,7 +21,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(cors());
-
+/* for HR API  */
+app.use('/api', require('./routes/api'));
 // app.use(session({
 //   secret: 'jaredasch',
 //   cookie: { maxAge: 60 * 60 * 1000 },
